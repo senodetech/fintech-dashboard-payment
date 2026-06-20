@@ -1,0 +1,50 @@
+<div class="p-8">
+
+    <h1 class="txt-2xl font-bold mb-4">
+        Payment Dashboard
+    </h1>
+
+    <h3>Total Records: {{payments.length}}</h3>
+
+    <h3>Debug:</h3><pre>{{payments | json}}</pre>
+
+    <table class="w-full border">
+
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border p-2">ID</th>
+                <th class="border p-2">Reference</th>
+                <th class="border p-2">Beneficiary</th>
+                <th class="border p-2">Amount</th>
+                <th class="border p-2">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for(payment of payments; track payment.id){
+
+            <tr>
+                <td class="border p-2">
+                    {{payment.id}}
+                </td>
+                <td class="border p-2">
+                    {{payment.referenceNo}}
+                </td>
+                <td class="border p-2">
+                    {{payment.beneficiaryName}}
+                </td>
+                <td class="border p-2">
+                    {{payment.amount}}
+                </td>
+                <td class="border p-2">
+                    {{payment.status}}
+                </td>
+            </tr>
+
+            }
+            
+        </tbody>
+
+    </table>
+
+</div>

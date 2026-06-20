@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { Payment } from '../../models/payment.model';
 import { PaymentService } from '../../services/payment.service';
+import { PaymentFormComponent } from '../payment-form/payment-form.component';
 
 @Component({
   selector: 'app-payment-list-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,PaymentFormComponent],
   templateUrl: './payment-list.component.html',
   styleUrl: './payment-list.component.scss',
 })

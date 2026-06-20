@@ -1,0 +1,27 @@
+<form
+  [formGroup]="paymentForm"
+  (ngSubmit)="onSubmit()">
+
+
+  <div>
+    <label>Reference No</label>
+
+    <input
+      formControlName="referenceNNo">
+
+     @if(
+        paymentForm
+        .get('refereceNo')
+        ?.invalid
+        &&
+        paymentForm
+        .get('referenceNo')
+        ?.touched
+     ) {
+        <span>
+            Reference Required
+        </span>
+     }
+  </div>
+
+</form>

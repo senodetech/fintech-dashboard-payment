@@ -6,6 +6,7 @@ import { Payment } from '../models/payment.model';
 import { PaymentApiResponse } from '../models/payment-api-response.model';
 
 import { HttpClient } from '@angular/common/http';
+import { CreatePaymentDto } from '../models/create-payment.dto';
 
 @Injectable({
     providedIn: 'root'
@@ -32,6 +33,17 @@ export class PaymentService {
                 paymentDate: row.payment_date
             })))
 
+        );
+
+    }
+
+    createPayment(
+        payload: CreatePaymentDto
+    ): Observable<Payment> {
+
+        return this.http.post<Payment>(
+            'http:/localhost:3000/api/payments',
+            payload
         );
 
     }
